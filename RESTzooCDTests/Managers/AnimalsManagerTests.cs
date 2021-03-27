@@ -20,7 +20,7 @@ namespace RESTzooCD.Managers.Tests
             Assert.AreEqual(a.Name, animal.Name);
 
             allAnimals = _manager.GetAll();
-            Assert.AreEqual(1, allAnimals.Count);
+            Assert.AreEqual(2, allAnimals.Count);
         }
 
         [TestMethod()]

@@ -13,7 +13,7 @@ namespace RESTzooCD.Managers.Tests
         public void GetAllTest()
         {
             List<Animal> allAnimals = _manager.GetAll();
-            Assert.AreEqual(2, allAnimals.Count);
+            Assert.AreEqual(200, allAnimals.Count);
 
             Animal animal = new Animal { Name = "Rhino" };
             Animal a = _manager.Add(animal);
@@ -26,7 +26,7 @@ namespace RESTzooCD.Managers.Tests
             Assert.IsNull(non);
 
             Animal deletedAnimal = _manager.Delete(a.Id);
-            Assert.AreEqual("RhinoKKKKKK", deletedAnimal.Name);
+            Assert.AreEqual("Rhino", deletedAnimal.Name);
         }
 
         [TestMethod]

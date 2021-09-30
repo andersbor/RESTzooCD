@@ -20,16 +20,22 @@ namespace RESTzooCD.Managers.Tests
             Assert.AreEqual(a.Name, animal.Name);
 
             allAnimals = _manager.GetAll();
-            Assert.AreEqual(2, allAnimals.Count);
+            Assert.AreEqual(3, allAnimals.Count);
+
+            Animal non = _manager.Delete(-1);
+            Assert.IsNull(non);
+
+            Animal deletedAnimal = _manager.Delete(a.Id);
+            Assert.AreEqual("Rhino", deletedAnimal.Name);
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void GetByIdTest()
         {
 
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void AddTest()
         {
 

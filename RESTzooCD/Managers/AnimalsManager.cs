@@ -10,7 +10,7 @@ namespace RESTzooCD.Managers
         private static readonly List<Animal> Data = new List<Animal>
         {
             new Animal {Id = _nextId++, Name = "Lion"},
-            new Animal {Id=_nextId, Name = "Tiger"}
+            new Animal {Id=_nextId++, Name = "Tiger"}
         };
 
         public List<Animal> GetAll()
@@ -27,6 +27,14 @@ namespace RESTzooCD.Managers
         {
             animal.Id = _nextId++;
             Data.Add(animal);
+            return animal;
+        }
+
+        public Animal Delete(int id)
+        {
+            Animal animal = Data.FirstOrDefault(animal1 => animal1.Id == id);
+            if (animal == null) return null;
+            Data.Remove(animal);
             return animal;
         }
     }

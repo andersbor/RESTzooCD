@@ -26,7 +26,7 @@ namespace RESTzooCD.Managers.Tests
             Assert.IsNull(non);
 
             Animal deletedAnimal = _manager.Delete(a.Id);
-            Assert.AreEqual("RhinoKKK", deletedAnimal.Name);
+            Assert.AreEqual("RhinoKKKKKK", deletedAnimal.Name);
         }
 
         [TestMethod]
